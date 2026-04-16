@@ -1027,7 +1027,7 @@ function animate() {
   // Moon fades, Sun rises
   moonLight.intensity = Math.max(0, 0.4 - p * 0.5);
   sunLight.intensity = Math.min(1.8, p * 2.2);
-  sunLight.color.set(lerpColor(0xff6630, 0xffeebb, Math.min(1, p * 1.5)));
+  sunLight.color.copy(lerpColor(0xff6630, 0xffeebb, Math.min(1, p * 1.5)));
 
   // Sun position arc
   const sunAngle = Math.PI * 0.5 - p * Math.PI * 0.6;
@@ -1035,10 +1035,10 @@ function animate() {
 
   // Warm hemisphere fill
   warmFill.intensity = p * 0.8;
-  warmFill.color.set(lerpColor(0x110000, 0xff8833, p));
+  warmFill.color.copy(lerpColor(0x110000, 0xff8833, p));
 
   // Ambient — gets warmer
-  ambientLight.color.set(lerpColor(0x111122, 0x886644, p));
+  ambientLight.color.copy(lerpColor(0x111122, 0x886644, p));
   ambientLight.intensity = lerp(1.5, 2.5, p);
 
   // ── BEACON ──
@@ -1065,7 +1065,7 @@ function animate() {
   oceanGeo.computeVertexNormals();
 
   // Ocean color warms
-  oceanMat.color.set(lerpColor(0x0a1428, 0x1a2a40, p));
+  oceanMat.color.copy(lerpColor(0x0a1428, 0x1a2a40, p));
 
   // ── LIGHTHOUSE ROTATION — slow drift ──
   if (lighthouse) {
