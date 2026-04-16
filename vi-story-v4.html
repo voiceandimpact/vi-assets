@@ -707,7 +707,7 @@
 
 
 <!-- THREE.JS + GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 <script>
 // ─────────────────────────────────────────────────
 // THREE.JS SCENE
@@ -844,7 +844,7 @@ let lighthouseLoaded = false;
 
 // Load GLTFLoader dynamically
 const gltfScript = document.createElement('script');
-gltfScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/loaders/GLTFLoader.js';
+gltfScript.src = 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js';
 gltfScript.onerror = () => {
   // Fallback: build a placeholder lighthouse
   buildFallbackLighthouse();
@@ -1035,7 +1035,7 @@ function animate() {
 
   // Warm hemisphere fill
   warmFill.intensity = p * 0.8;
-  warmFill.skyColor.set(lerpColor(0x110000, 0xff8833, p));
+  warmFill.color.set(lerpColor(0x110000, 0xff8833, p));
 
   // Ambient — gets warmer
   ambientLight.color.set(lerpColor(0x111122, 0x886644, p));
