@@ -854,7 +854,7 @@ document.head.appendChild(gltfScript);
 gltfScript.onload = () => {
   const loader = new THREE.GLTFLoader();
   loader.load(
-    'lighthouse.glb',
+    'https://voiceandimpact.github.io/vi-assets/lighthouse.glb',
     (gltf) => {
       lighthouse = gltf.scene;
 
